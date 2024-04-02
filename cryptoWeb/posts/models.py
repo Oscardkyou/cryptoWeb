@@ -23,3 +23,11 @@ class Posts(models.Model):
 
 
 
+
+
+
+
+
+
+
+

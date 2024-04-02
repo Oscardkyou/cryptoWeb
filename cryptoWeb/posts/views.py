@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from .models import Posts
+
 
 # Create your views here.
 def post_view(request):
@@ -7,3 +9,6 @@ def post_view(request):
    context = {'title': 'Добрый Вечер!', 'posts': posts}
 
    return render(request, 'index10.html', context)
+
+
+
