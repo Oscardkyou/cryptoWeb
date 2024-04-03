@@ -12,3 +12,7 @@ def categories(request, dog_id):
 
 def categories_by_slug(request, dog_slug):
    return HttpResponse(f"<h1>Сатья по категориям</h1><p>slug: {dog_slug}</p>")
+
+
+def acrhive(request, year):
+   return HttpResponse(f"<h1>Архив по годам</h1><p>{year}</p>")
