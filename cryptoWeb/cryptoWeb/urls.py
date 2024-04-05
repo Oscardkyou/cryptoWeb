@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from main_app.views import index_view2, index_view3, index_view4
-from cats import views
+from cats.views import page_not_found
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -9,3 +8,6 @@ urlpatterns = [
     path('posts/', include('posts.urls')),
     path('', include('cats.urls')),
 ]
+
+
+handler404 = page_not_found
