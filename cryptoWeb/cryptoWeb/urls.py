@@ -5,7 +5,6 @@ from cats.views import page_not_found
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('context/', include('main_app.urls')),
-    path('posts/', include('posts.urls')),
     path('', include('cats.urls')),
 ]
 

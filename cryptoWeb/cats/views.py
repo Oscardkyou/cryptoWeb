@@ -19,7 +19,7 @@ def categories_by_slug(request, dog_slug):
 
 
 def archive(request, year):
-   if int(year) > 2023: #добавил int для переопрделения
+   if year > 2023: #добавил int для переопрделения
       uri = reverse('dogs', args=('sport',))
       return HttpResponseRedirect(uri)#'/', permanent=True
    return HttpResponse(f"<h1>Архив по годам</h1><p>{year}</p>")
