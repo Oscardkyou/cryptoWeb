@@ -1,24 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Website{% endblock %}</title>
+    <title>{{ title }}</title>
 </head>
 <body>
-    <header>
-        <h1>My Website</h1>
-    </header>
-    <nav>
-        <!-- Меню навигации -->
-    </nav>
-    <main>
-        {% block content %}
-        <!-- Основное содержимое страницы -->
-        {% endblock %}
-    </main>
-    <footer>
-        © 2024 My Website
-    </footer>
+<ul>
+    <li><a href="{% url 'home' %}">Главная страница</a></li>
+    {% for m in menu %}
+    {% if not forloop.last %}<li>{% else %}<li class="last">{% endif %}
+        <a href="{% url m.url_name %}">{{ m.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% block content %} {% endblock %}
 </body>
 </html>
