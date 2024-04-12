@@ -54,6 +54,7 @@ def index(request):
             'main_tittle': 'title',
             'menu': menu,
             'posts': data_db,
+            'cats_selected': 0,
          }
    return render(request, 'cats/index.html', context=data)
 
@@ -79,7 +80,13 @@ def login(request):
 
 
 def show_category(request, cat_id):
-   return index(request)
+   data = { 'title': 'Отображения по рубрикам',
+            'main_tittle': 'title',
+            'menu': menu,
+            'posts': data_db,
+            'cats_selected': cat_id,
+         }
+   return render(request, 'cats/index.html', context=data)
 
 
 def page_not_found(request, exception):
